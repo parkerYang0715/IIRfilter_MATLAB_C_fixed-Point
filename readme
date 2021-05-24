@@ -1,15 +1,3 @@
-For each C file
-gcc XXXXX.c -o XXXXX
-
-
-
-In addition, I tried to write my first makefile based on the rule in this video
-https://www.youtube.com/watch?v=_r7i5X0rXJk
-compile: type "make"
-clean file: type "make clean"
-
-in this makefile, "main.c" is the same as "IIRfilter_way2_floatPoint.c"
-
 
 IIR Filter Design procedure using bilinear transform
 Step 1: Prewarp any critical frequency in the digital filter specs.
@@ -26,3 +14,18 @@ Step 4: Map from s-domain to z-domain
 𝑠=2/𝑇  (𝑧−1)/(𝑧+1)
 
 ref: https://www.youtube.com/watch?v=Eg93IqRG7QI&list=PLj6E8qlqmkFuUfwSfmEXgjeJI33ZxxmSd&index=31
+
+
+
+For each C file
+gcc XXXXX.c -o XXXXX
+
+
+
+In addition, I tried to write my first makefile based on the rule in this video
+https://www.youtube.com/watch?v=_r7i5X0rXJk
+compile: type "make"
+clean file: type "make clean"
+
+in this makefile, "main.c" is the same as "IIRfilter_way2_floatPoint.c"
+
