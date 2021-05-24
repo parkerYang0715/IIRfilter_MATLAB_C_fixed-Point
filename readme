@@ -9,3 +9,20 @@ compile: type "make"
 clean file: type "make clean"
 
 in this makefile, "main.c" is the same as "IIRfilter_way2_floatPoint.c"
+
+
+IIR Filter Design procedure using bilinear transform
+Step 1: Prewarp any critical frequency in the digital filter specs.
+𝜔_𝑎=2/𝑇  tan⁡(𝜔_𝑑  𝑇/2)
+
+Step 2: Find a suitable normalized prototype analogue LPF, H(s)  
+e.g., for Butterworth     1st order: 𝐻(𝑠)=1/(𝑠+1)	    2nd order: 𝐻(𝑠)=1/(𝑠^2+√2 𝑠+1)
+
+Step 3: Denormalization according to filter type
+LPF: 𝑠=𝑠/𝜔_𝑎, HPF: 𝑠=𝜔_𝑎/𝑠, BPF: 𝑠=(𝑠^2+𝜔_𝑜^2 )/𝑠𝑊, BSF: 𝑠=𝑠𝑊/(𝑠^2+𝜔_𝑜^2)
+where 𝑊=𝜔_2−𝜔_1,     𝜔_𝑜^2=𝜔_2 𝜔_1
+
+Step 4: Map from s-domain to z-domain
+𝑠=2/𝑇  (𝑧−1)/(𝑧+1)
+
+ref: https://www.youtube.com/watch?v=Eg93IqRG7QI&list=PLj6E8qlqmkFuUfwSfmEXgjeJI33ZxxmSd&index=31
